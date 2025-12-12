@@ -10,16 +10,6 @@ document.getElementById("pcForm").addEventListener("submit", function(e) {
 
   document.getElementById("resultado").classList.remove("hidden");
 
-  // Escolher imagem real de setup conforme orçamento
-  let imgUrl = "";
-  if (orcamento < 2000) {
-    imgUrl = "https://i.imgur.com/3ZQ3Zqk.jpg";
-  } else if (orcamento < 5000) {
-    imgUrl = "https://i.imgur.com/7uZVYwP.jpg";
-  } else {
-    imgUrl = "https://i.imgur.com/9kYwF3P.jpg";
-  }
-  document.getElementById("pcImage").src = imgUrl;
 
   // Mensagem WhatsApp
   const mensagem = `Olá DF TECH! Quero montar um PC:\n\nDescrição: ${descricao}\nUso: ${uso}\nPeriféricos: ${perifericos}\nOrçamento: R$${orcamento}`;
@@ -77,3 +67,4 @@ document.getElementById("togglePecas").addEventListener("click", () => {
     slideshow.style.display = "block";
   }
 });
+
