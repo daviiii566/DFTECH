@@ -271,3 +271,68 @@ main {
     height: 200px;
   }
 }
+/* ======================= */
+/*      RESPONSIVIDADE     */
+/* ======================= */
+
+@media (max-width: 900px) {
+
+  /* Faz os blocos ficarem um embaixo do outro */
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Painel ocupa quase a tela toda */
+  .painel {
+    width: 95% !important;
+    max-width: 500px;
+  }
+
+  /* Slide desce e centraliza automaticamente */
+  .slideshow {
+    position: relative !important;   /* Tira do canto */
+    right: 0 !important;
+    top: 0 !important;
+
+    width: 95% !important;
+    max-width: 400px;
+    height: 200px;                   /* proporção boa pro celular */
+    margin: 0 auto;
+  }
+
+  /* Imagens continuam perfeitas */
+  .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Remove qualquer empurrão lateral */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+  
+  .slideshow {
+    height: 170px !important;
+  }
+
+  .painel {
+    width: 100% !important;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-section {
+    width: 95% !important;
+    padding: 15px;
+  }
+}
+
