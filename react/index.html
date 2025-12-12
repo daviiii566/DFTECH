@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DF TECH - PCs e Celulares Sob Medida</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Faixa animada -->
+  <div class="faixa-topo">
+    <div class="faixa-conteudo">
+      🚚 Retirada em Cruz das Almas | Frete grátis para toda a Bahia
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1>DF TECH</h1>
+    <a href="https://instagram.com/df_tech1" target="_blank" class="instagram-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+  </header>
+
+  <main>
+    <!-- Painel principal -->
+    <section class="painel" id="painelPC">
+      <div class="form-section">
+        <h2>Monte seu PC Sob Medida</h2>
+        <form id="pcForm">
+          <label>Descrição do PC:</label>
+          <textarea id="descricao" placeholder="Ex: PC gamer com gabinete RGB..." required></textarea>
+
+          <label>O que pretende rodar:</label>
+          <input type="text" id="uso" placeholder="Ex: Jogos como GTA V, edição de vídeo..." required>
+
+          <label>Inclui periféricos?</label>
+          <select id="perifericos">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+          </select>
+
+          <label>Orçamento disponível (R$):</label>
+          <input type="number" id="orcamento" placeholder="Ex: 3500" required>
+
+          <button type="submit">Gerar Configuração</button>
+        </form>
+      </div>
+
+      <div id="resultado" class="hidden">
+        <h2>Seu PC aproximado:</h2>
+        <img id="pcImage" alt="PC Aproximado" class="pc-image">
+        <div class="info-extra">
+          <p>✅ Garantia de 4 meses</p>
+          <p>⏳ Prazo de entrega: 1 mês e meio</p>
+          <p>🎨 Personalização ilimitada do setup</p>
+        </div>
+        <a id="whatsappBtn" class="whatsapp-button" target="_blank">Continuar Compra</a>
+      </div>
+    </section>
+
+    <!-- Slideshow lateral -->
+    <aside class="slideshow">
+      <img src="img/setup1.jpg" class="slide active">
+      <img src="img/setup2.jpg" class="slide">
+      <img src="img/setup3.jpg" class="slide">
+    </aside>
+  </main>
+
+  <!-- Botão para peças separadas -->
+  <div class="pecas-btn">
+    <button id="togglePecas">Peças Separadas</button>
+  </div>
+
+  <!-- Mini painel de peças -->
+  <section class="painel hidden" id="painelPecas">
+    <div class="form-section">
+      <h2>Encomende Peças Separadas</h2>
+      <form id="pecaForm">
+        <label>Qual peça deseja?</label>
+        <select id="peca">
+          <option value="Placa de Vídeo">Placa de Vídeo</option>
+          <option value="Processador">Processador</option>
+          <option value="Memória RAM">Memória RAM</option>
+          <option value="SSD">SSD</option>
+          <option value="Fonte">Fonte</option>
+        </select>
+
+        <label>Orçamento disponível (R$):</label>
+        <input type="number" id="orcamentoPeca" placeholder="Ex: 1500" required>
+
+        <button type="submit">Solicitar Orçamento</button>
+      </form>
+    </div>
+  </section>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
