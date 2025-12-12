@@ -1,0 +1,273 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0A0F2C;
+  color: #00FFFF;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.faixa-topo {
+  background: linear-gradient(90deg, #00FFFF, #0A0F2C, #00FFFF);
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  animation: faixaAnimada 8s linear infinite;
+}
+
+@keyframes faixaAnimada {
+  0% {background-position: 0%;}
+  100% {background-position: 200%;}
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0A0F2C;
+  padding: 15px;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-shadow: 0 0 10px #00FFFF;
+  animation: neonPulse 2s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {text-shadow: 0 0 10px #00FFFF;}
+  to {text-shadow: 0 0 25px #00FFFF;}
+}
+
+.instagram-icon {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.instagram-icon img {
+  width: 40px;
+  filter: drop-shadow(0 0 5px #00FFFF);
+  transition: transform 0.3s;
+}
+
+.instagram-icon img:hover {
+  transform: scale(1.2);
+}
+
+.form-section {
+  margin: 30px auto;
+  width: 80%;
+  max-width: 600px;
+  background: rgba(10, 15, 44, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00FFFF;
+  animation: fadeInUp 1.5s ease-in;
+}
+
+@keyframes fadeInUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #111;
+  color: #00FFFF;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00FFFF;
+  color: #0A0F2C;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0A0F2C;
+  color: #00FFFF;
+  box-shadow: 0 0 10px #00FFFF;
+}
+
+.hidden {
+  display: none;
+}
+
+.pc-image {
+  width: 300px;
+  margin: 20px auto;
+  display: block;
+  filter: drop-shadow(0 0 10px #00FFFF);
+  animation: fadeIn 1.5s ease-in;
+}
+
+.info-extra {
+  margin: 20px auto;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #25D366;
+  transition: 0.3s;
+}
+
+.whatsapp-button:hover {
+  background: #128C7E;
+}
+main {
+  display: flex;
+  justify-content: center;   /* centraliza horizontalmente */
+  align-items: flex-start;
+  gap: 40px;                 /* espaço entre painel e slideshow */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.painel {
+  width: 600px;              /* largura fixa */
+  margin: 0 auto;            /* centraliza */
+}
+.slideshow {
+  width: 350px;
+  height: 220px;
+  position: absolute;        /* tira do fluxo normal */
+  right: 20px;               /* fixa no canto direito */
+  top: 100px;                /* ajusta a altura */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00FFFF;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Faixa animada no topo */
+.faixa-topo {
+  background: #00FFFF;
+  color: #0A0F2C;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.faixa-conteudo {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: bold;
+  animation: faixaScroll 12s linear infinite;
+}
+
+@keyframes faixaScroll {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+
+/* ===== layout principal (substituir versões antigas de main/.painel/.slideshow/.slide) ===== */
+
+main {
+  display: flex;
+  justify-content: center;   /* mantém o painel centralizado */
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;        /* permite posicionamento relativo interno */
+}
+
+/* painel principal (form) */
+.painel {
+  width: 600px;
+  box-sizing: border-box;    /* evita overflow por padding */
+}
+
+.slideshow {
+  position: absolute !important;
+  right: -50px !important;   /* MAIS PRA DIREITA */
+  top: 150px !important;
+  width: 350px;
+  height: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00FFFF;
+  z-index: 10;
+}
+
+main {
+  position: relative !important;
+}
+
+
+/* cada imagem do slide (no seu HTML a tag é <img class="slide">) */
+/* Assegura que a imagem preencha o container sem distorcer */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* mantém proporção e recorta elegante */
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease-in-out;
+  display: block;            /* força comportamento de imagem consistente */
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Responsividade: em telas pequenas o slideshow vai para baixo do painel */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .painel {
+    width: 95%;
+    max-width: 700px;
+  }
+  .slideshow {
+    width: 95%;
+    height: 200px;
+  }
+}
